@@ -1,6 +1,6 @@
 File.open("questionAndAnswerFile.txt", "r") do |questionAndAnswerFile|
 File.open("hangman.rb", "r") do |hangman|
-File.open)("incorrectLetters.rb", "a+") do |incorrectLetters|
+File.open("incorrectLetters.rb", "a+") do |incorrectLetters|
 
 index = 0
 questionArray = questionAndAnswerFile.readlines()
