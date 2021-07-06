@@ -1,5 +1,5 @@
 File.open("questionAndAnswerFile.txt", "r") do |questionAndAnswerFile|
-File.open("hangman.rb", "r") do |hangman|
+File.open("hangman.txt", "r") do |hangmanFile|
 File.open("incorrectLetters.rb", "a+") do |incorrectLetters|
 
 index = 0
@@ -11,10 +11,15 @@ repeat = true
 playerInput = ""
 lives = 6
 score = 0
-
+wordLength = questionAndAnswer[1].length()
+hangmanFile = hangmanFile.readlines()
+hangman = hangmanFile[index].split(",")
 puts "Welcome!"
+
 while lives >=1 or repeat == true
-  puts "Here is your hint: %s" % question
+  puts "Here is your hints: %s" % question
+  puts "and is %s letters long." % wordLength
+  puts hangman
   playerInput = gets
 
   if playerInput.include? answer
